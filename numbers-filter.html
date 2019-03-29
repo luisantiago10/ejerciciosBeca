@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Numbers-Filter</title>
+</head>
+<body>
+
+
+
+
+
+	<script>
+		let numbers = [5,32,43,4];
+		let resultado = numbers.filter((n)=>{
+			return n%2!==0;
+		});
+		//El resultado es 5,3 porque la funcion nos esta filtrando los datos que cuando sea diferente a 0 elresiduo de la division de cada numero nos lo va a mostrar en pantalla o consola
+		let hResultado = document.createElement('h3');
+		hResultado.innerHTML = `Array: ${numbers} <br/>El resultado de la funcion filter es: ${resultado}`;
+		document.body.appendChild(hResultado);
+
+	</script>
+	
+</body>
+</html>

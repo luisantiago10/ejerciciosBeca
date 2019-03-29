@@ -1,0 +1,48 @@
+<link rel="import" href="../polymer/polymer-element.html">
+
+<dom-module id="mostrar-datos-li">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    <div>
+    <ul>
+      <li id="C1" data-id="US" data-dial-code="1" on-click="obtenerDatos">USA</li>
+      <li id="C2" data-id="CA" data-dial-code="2" on-click="obtenerDatos">Canada</li>
+      <li id="C3" data-id="FF" data-dial-code="3" on-click="obtenerDatos">France</li>
+    </ul>
+  </div>
+  </template>
+
+  <script>
+    /**
+     * `mostrar-datos-li`
+     * 
+     *
+     * @customElement
+     * @polymer
+     * @demo demo/index.html
+     */
+    class MostrarDatosLi extends Polymer.Element {
+      static get is() { return 'mostrar-datos-li'; }
+      static get properties() {
+        return {
+        };
+      }
+      obtenerDatos(e){
+        let id = e.path[0].attributes[0].value;
+        let dataId = e.path[0].attributes[1].value;
+        let dataDialCode = e.path[0].attributes[2].value;
+        alert(`${id} ${dataId} ${dataDialCode}`);
+        
+        console.log(e.path[0].attributes[0].value);
+        console.log(e.path[0].attributes[1].value);
+        console.log(e.path[0].attributes[2].value);
+      }
+    }
+
+    window.customElements.define(MostrarDatosLi.is, MostrarDatosLi);
+  </script>
+</dom-module>

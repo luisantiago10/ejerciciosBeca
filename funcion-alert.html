@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Funcion Alert</title>
+</head>
+<body>
+	<h2>Lista de Objetos</h2>
+	<div>
+		<ul>
+			<li id="C1" data-id="US" data-dial-code="1" onclick="obtenerDatos(this)">USA</li>
+			<li id="C2" data-id="CA" data-dial-code="2" onclick="obtenerDatos(this)">Canada</li>
+			<li id="C3" data-id="FF" data-dial-code="3" onclick="obtenerDatos(this)">France</li>
+		</ul>
+	</div>
+
+	
+	<script type="text/javascript">
+
+		/*En este ejercicio lo que realize fue mandar una funcion desde la lista al darle click el nombre de la funcion es obtenerDatos donde le mando los datos del li  al darle click nos ejecuta la funcion que lo hace es obtener el evento con los datos del li y lo que hice con ese evento fue escalar las propiedades del evento hasta que obtengo el dato que necesito*/
+		function obtenerDatos(e){
+			console.log(e);
+			let id = e.getAttribute("id");
+            let dataID = e.getAttribute("data-id");
+            let dataDial = e.getAttribute("data-dial-code");
+
+            alert(`${id},${dataID},${dataDial}`);
+		}
+	</script>
+	
+</body>
+</html>

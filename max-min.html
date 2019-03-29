@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Maximo y minimi de un array</title>
+</head>
+<body>
+	<h1>Mustra el maximo y el minimo de un array</h1>
+
+
+	<script type="text/javascript">
+		/*Para obtener el numero maximo y el numero minimo de un array utilize metodos que ya tiene javascript por defecto
+		como el Math.max y Math.min cree 2 variables donde les agrego tales funciones y muestro los resultados en el DOM
+		*/
+		let object =  [10, 3,40,1];
+		let hArray = document.createElement('h3');
+		hArray.innerHTML = `Array original [${object}]`;
+		document.body.appendChild(hArray);
+		let max = Math.max(...object);
+		let min = Math.min(...object);
+
+		let hMax = document.createElement('h3');
+		hMax.innerHTML = `Numero maximo ${max}`;
+		document.body.appendChild(hMax);
+		console.log(max);
+
+		let hMin = document.createElement('h3');
+		hMin.innerHTML = `Numero minimo ${min}`;
+		document.body.appendChild(hMin);
+		console.log(max);
+		
+
+	</script>
+</body>
+</html>

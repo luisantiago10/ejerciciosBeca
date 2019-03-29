@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Objetos Filter</title>
+</head>
+<body>
+	<h1>Las personas menores a 35 años son:</h1>
+
+
+	<script>
+		let people = [
+		{name:"john", age:28 },{name:"jane", age:31 },{name:"Peter", age:55 }, ];
+		/*Realize una funcion para hacer el filtro de datos del array people, cree una variable let 
+			para meter el metodo filter donde le mando el array people, ahi hago el return n.age que nos trae ya los datos filtrados que en este caso seria menor a 35 años el .age le digo que los filtre por los años.
+			Despues hago un for in para recorrer el objeto que me dio el filtrado en este caso seria resultado dentro creo un li donde ingreso los datos del for in que lo especifico con resultado[dato].name, al final lo muesro en el documento html con appendChild 
+		*/
+		function filtarObjectos(){
+
+		let resultado = people.filter((n)=>{
+			
+			return n.age<35;
+		
+		});
+		console.log(resultado);
+		for(dato in resultado){
+		let hDatos = document.createElement('li');
+		hDatos.innerHTML = ` ${resultado[dato].name} ${resultado[dato].age}`;
+		document.body.appendChild(hDatos);
+	}
+
+	}
+	filtarObjectos();
+	
+		
+	</script>
+</body>
+</html>

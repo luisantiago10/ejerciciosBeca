@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Generar Tabla de Datos</title>
+	<style type="text/css">
+		
+		 td, tr{
+			border:1px solid black;
+			padding: 4px;
+		}
+	</style>
+</head>
+<body>
+
+	<div>
+		<h2>Tabla de datos</h2>
+		<table>
+			<thead>
+				<tr>Id Person</tr>
+				<tr>Name</tr>
+				<tr>City</tr>
+				<tr>No. Phone</tr>
+			</thead>
+			<tbody id="tbody">
+
+			</tbody>
+		</table>
+	</div>
+
+
+
+	<script type="text/javascript">
+		
+		const persArr = [{
+           personaId: 123,
+           name: "John",
+           city: "Mexico",
+           phoneNo:123456789
+
+           }, {
+           personaId: 124,
+           name: "Amelia",
+           city: "Sydney",
+           phoneNo:123456789
+
+           },{
+           personaId: 125,
+           name: "Emily",
+           city: "Perth",
+           phoneNo:123456789
+
+           }];
+
+           let tbody = document.getElementById("tbody");
+
+           	
+           	let tdId = document.createElement("td");
+           	let tdName = document.createElement("td");
+           	let tdCity = document.createElement("td");
+           	let tdPhone = document.createElement("td");
+
+           for(data in persArr){
+           	let trId = document.createElement("tr");
+           	let trName = document.createElement("tr");
+           	let trCity = document.createElement("tr");
+           	let trPhone = document.createElement("tr");
+           	trId.innerHTML = persArr[data].personaId;
+           	trName.innerHTML = persArr[data].name;
+           	trCity.innerHTML = persArr[data].city;
+           	trPhone.innerHTML = persArr[data].phoneNo;
+           	console.log(persArr[data].personaId);
+
+           tdId.appendChild(trId);
+           tdName.appendChild(trName);
+           tdCity.appendChild(trCity);
+           tdPhone.appendChild(trPhone);
+           }
+           tbody.appendChild(tdId);
+           tbody.appendChild(tdName);
+           tbody.appendChild(tdCity);
+           tbody.appendChild(tdPhone);
+	</script>
+	
+</body>
+</html>

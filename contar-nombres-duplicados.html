@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Contar Nombres Duplicados</title>
+</head>
+<body>
+	<h1>Aqui se muestran los nombres y cuantas veces se repiten</h1>
+
+
+
+	<script type="text/javascript">
+		
+		let people = [
+		{name:"bob", id : 1},{name:"john", id : 2},{name:"alex", id : 3},{name:"john", id : 3} 
+		];
+		/* Cree una funcion para contar los nombres que se duplican inicie creando un array que se llama validarDatos
+			y una variable contarNombres que sera mi contador despues cree un for in donde recorro mi objeto
+			dentro del for realiazo una comparacion que si mi array validarDatos no incluye el dato que se esta recorriendo lo va a ingresar al array despues creo otro for in donde hago la comparacion que si ya existe ese dato que le sume 1 al contarNombres.
+			Ya que termina de hacer el recorrido creo un h4 que es donde voy a ingresar mis datos para mostraslos en el DOM.
+
+
+		*/
+		function contarNombres(){
+		let validarDatos = [];
+		let contarNombre = 0;
+
+		for(dato in people){
+			if(!validarDatos.includes(people[dato].name)){
+				validarDatos.push(people[dato].name);
+
+				for(data in people){
+					if(people[data].name === people[dato].name){
+						contarNombre ++;
+					}
+				}
+
+				let hDatos = document.createElement('h4');
+				hDatos.innerHTML = `Nombre: ${people[dato].name} se repite: ${contarNombre}`;
+				document.body.appendChild(hDatos);
+
+			}
+			contarNombre = 0;
+		}
+
+	}
+	contarNombres();
+	</script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Unir arrays</title>
+</head>
+<body>
+
+	
+
+
+
+	<script type="text/javascript">
+		let arrayUno = ['santy', 'luis'];
+		let arrayDos = ['alfredo', 'rosario'];
+		var hArrays = document.createElement('h3');
+		hArrays.innerHTML = `Arryar 1: [${arrayUno}] <br> Array 2: [${arrayDos}]`
+		document.body.appendChild(hArrays);
+		let unirArrayConcat = arrayUno.concat(arrayDos);
+		let unirArrayJoin = arrayUno.join(arrayDos);
+		let unirArraySplice = arrayUno.splice( arrayDos);
+		Array.prototype.push.apply(arrayUno,arrayDos);
+
+
+		
+		// La respuesta correcta es el metodo Concat() porque se utiliza para unir dos o más arrays, sin encambio los demas se usan para devolver string o solo para insertar nuevo elemento o remplazarlo.
+		var hConcat = document.createElement('h3');
+		hConcat.innerHTML = `Uniendo arrays con metodo Concat() :<br>[${unirArrayConcat}]`;
+		document.body.appendChild(hConcat);
+
+		//El método join() une los elementos de un array en una cadena y devuelve la cadena.
+		var hJoin = document.createElement('h3');
+		hJoin.innerHTML = `Uniendo arrays con metodo Join() :<br>${unirArrayJoin}`;
+		document.body.appendChild(hJoin);
+
+		//El método push() agrega nuevos elementos al final de un array 
+		var hPush = document.createElement('h3');
+		hPush.innerHTML = `Uniendo arrays con metodo Push() :<br>[${arrayUno}]`;
+		document.body.appendChild(hPush);
+
+
+		//El método splice() agrega o elimina elementos datos desde un array y devuelve los elementos eliminados.
+		var hSplice = document.createElement('h3');
+		hSplice.innerHTML = `Uniendo arrays con metodo Splice() :<br>[${unirArraySplice}]`;
+		document.body.appendChild(hSplice);
+
+		
+	</script>
+	
+</body>
+</html>
